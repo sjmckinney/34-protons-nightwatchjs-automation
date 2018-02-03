@@ -1,0 +1,21 @@
+{
+  "name": "my-nightwatchjs",
+  "version": "1.0.0",
+  "description": "To run tests execute the following code from the root of the project *node_modules/.bin/nightwatch --config nightwatch.conf.js*",
+  "main": "nightwatch.conf.js",
+  "directories": {
+    "test": "test/e2e"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chromedriver": "^2.35.0",
+    "env2": "^2.2.0",
+    "nightwatch": "^0.9.19",
+    "selenium-server": "^3.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

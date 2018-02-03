@@ -1,5 +1,7 @@
 *.log
 *.png
-.idea
-.vscode
-node_modules
+/.idea/
+/.vscode/
+/node_modules/
+.DS_Store
+/reports/
