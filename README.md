@@ -2,7 +2,7 @@ To run all tests in test directory execute the following code from the root of t
 
 *node_modules/.bin/nightwatch --config nightwatch.conf.js*
 
-Verbose mode add the *--verbose* flag.
+For verbose output add the *--verbose* flag.
 
 A single test can be run by adding the *--test* flag and the path to the test file.
 

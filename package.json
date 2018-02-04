@@ -10,6 +10,7 @@
   "devDependencies": {
     "chromedriver": "^2.35.0",
     "env2": "^2.2.0",
+    "geckodriver": "^1.10.0",
     "nightwatch": "^0.9.19",
     "selenium-server": "^3.8.1"
   },
