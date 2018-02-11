@@ -1,23 +1,32 @@
 var usernameFieldId = '#username';
 var passwordFieldId = '#password';
+var username = 'user', password = '123';
 var loginCommands = {
     'loginAsDefaultUser': function () {
         return this.waitForElementVisible('@userNameField',
                                     2000,
                                     function () {
-                                        this.setValue(usernameFieldId, 'user');
-                                        this.setValue(passwordFieldId, '123');
+                                        this.setValue(usernameFieldId, username);
+                                        this.setValue(passwordFieldId, password);
+                                        console.log("Setting username and password to " + username + " and " + password);
                                     }),
                                     'Failed to set username and password values'
         },
     'submitLoginForm': function () {
-        return this.submitForm('@loginForm')
-                   .waitForElementNotPresent('@loginForm', 5000);
+        this.submitForm('@loginForm', function () {
+            console.log("Submitting login form");
+        })
+            .waitForElementNotPresent('@loginForm', 6000);
+        return this.api.page.home();
         }
 };
 
 module.exports = {
-    url: 'https://www.34protons.co.uk/demo_2_0/login.php',
+    url: function() {
+        var targetPage = 'login.php';
+        console.log("Launching url: " + this.api.launch_url + targetPage);
+        return this.api.launch_url + targetPage;
+        },
     commands: [loginCommands],
     elements: {
         userNameField: { selector: usernameFieldId },

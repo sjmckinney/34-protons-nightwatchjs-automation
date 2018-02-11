@@ -21,6 +21,7 @@ module.exports = {
   },
   "test_settings": {
     "default": {
+      "launch_url": "https://www.34protons.co.uk/demo_2_0/",
       "screenshots": {
         "enabled": true, // if you want to keep screenshots
         "path": SCREENSHOT_PATH // save screenshots here
@@ -41,7 +42,10 @@ module.exports = {
     "chrome-headless": {
       "desiredCapabilities": {
         "browserName": "chrome",
-        "javascriptEnabled": true // turn off to test progressive enhancement
+        "javascriptEnabled": true, // turn off to test progressive enhancement
+         "chromeOptions" : {
+           "args" : ["--headless"]
+         }
       }
     },
     "firefox": {
@@ -49,7 +53,16 @@ module.exports = {
         "browserName": "firefox",
         "javascriptEnabled": true // turn off to test progressive enhancement
       }
-    }
+    },
+    "firefox-headless": {
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "moz:firefoxOptions": {
+            "args":["-headless"]
+        },
+        "javascriptEnabled": true // turn off to test progressive enhancement
+      }
+  }
   }
 }
 

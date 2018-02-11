@@ -1,19 +1,4 @@
 var homeCommands = {
-    'loginAsDefaultUser': function () {
-        this.waitForElementVisible('@userNameField',
-                                    2000,
-                                    function () {
-                                        this.setValue('#username', 'user');
-                                        this.setValue('#password', '123');
-                                    },
-                                    'Failed to set username and password values'
-                                    )
-        return this;
-        },
-    'submitLoginForm': function () {
-        this.submitForm('@loginForm');
-        return this;
-    },
     'isSelectedRadioBtn': function () {
         this.waitForElementVisible('@radioUpper',
                                     2000,
@@ -27,7 +12,10 @@ var homeCommands = {
 };
 
 module.exports = {
-    url: 'https://www.34protons.co.uk/demo_2_0/',
+    url: function() {
+        console.log("Launching url: " + this.api.launch_url);
+        return this.api.launch_url;
+    },
     commands: [homeCommands],
     elements: {
         inputDelayField: { selector: '#inputDelay' },

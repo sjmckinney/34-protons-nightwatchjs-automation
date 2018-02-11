@@ -15,7 +15,7 @@
     "selenium-server": "^3.8.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/nightwatch/bin/nightwatch"
   },
   "author": "",
   "license": "ISC"
